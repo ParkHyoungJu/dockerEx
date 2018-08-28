@@ -1,11 +1,5 @@
-# start with Tomcat
-FROM tomcat:8.5-alpine
-
+FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-
-# arg name matches the docker maven plugin buildArgs
-ARG WAR_FILE
-ADD ${WAR_FILE} /usr/local/tomcat/webapps/app.war
-
-RUN sh -c 'touch /usr/local/tomcat/webapps/app.war'
-ENTRYPOINT [ "sh", "-c", "java -Djava.security.egd=file:/dev/./urandom -jar /usr/local/tomcat/webapps/app.war" ]
+ADD target/dockerEx-0.0.1-SNAPSHOT.war app.jar
+ENV JAVA_OPTS=""
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
