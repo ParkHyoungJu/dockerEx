@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
   
-  @RequestMapping(value = "/")
+  @RequestMapping(value = "/index")
   public ModelAndView main() {
       ModelAndView view = new ModelAndView("index");
       view.addObject("text", "world");
