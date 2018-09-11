@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  docker_ex:
+    container_name: dockerEx
+    image: docker_ex:latest
+    ports:
+      - "8080:8080"
