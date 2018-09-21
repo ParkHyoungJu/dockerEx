@@ -45,7 +45,6 @@ modules.xml
 *.log
 *.ctxt
 .mtj.tmp/
-*.jar
 !/**/WEB-INF/lib/*.jar
 *.war
 *.ear
